@@ -7,3 +7,4 @@ COPY redis.conf /usr/local/etc/redis/redis.conf
 COPY redis-trib.rb  /usr/local/etc/redis/redis-trib.rb
 RUN chmod 777  /usr/local/etc/redis/redis-trib.rb
 ENTRYPOINT [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
+CMD []
