@@ -1,4 +1,4 @@
-FROM redis:5.0.5
+FROM redis:4.0.14
 # install ruby env
 RUN apt-get update && apt-get -y install ruby-full  && apt-get -y install rubygems && gem install redis
 # copy redis.conf :config cluster
