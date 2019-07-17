@@ -1,5 +1,5 @@
 FROM debian:buster-slim
-RUN apt-get -y update && apt-get -y install epel-release && apt-get -y install redis
+RUN apt-get -y update  && apt-get -y install redis
 RUN apt-get clean 
 # install ruby env
 RUN apt-get update && apt-get -y install ruby-full  && apt-get -y install rubygems && gem install redis
