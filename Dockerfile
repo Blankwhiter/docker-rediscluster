@@ -5,5 +5,6 @@ RUN apt-get update && apt-get -y install ruby-full  && apt-get -y install rubyge
 COPY redis.conf /usr/local/etc/redis/redis.conf
 # copy ruby script
 COPY redis-trib.rb  /usr/local/etc/redis/redis-trib.rb
-RUN  chmod 777 /usr/local/etc/redis/redis-trib.rb &&  chmod 777 /usr/local/etc/redis/redis.conf && redis-server stop
+RUN  chmod 777 /usr/local/etc/redis/redis-trib.rb &&  chmod 777 /usr/local/etc/redis/redis.conf 
+RUN　redis-server stop
 CMD [ "redis-server","/usr/local/etc/redis/redis.conf" ]
