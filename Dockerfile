@@ -70,18 +70,13 @@ RUN set -ex; \
 	\
 	rm -r /usr/src/redis; \
 	\
-	apt-get purge -y --auto-remove $buildDeps;\
-               \
-              apt-get -y install ruby-full;  \
-             \
-             apt-get -y install rubygems; \
-             \
-             gem install redis
+	apt-get purge -y --auto-remove $buildDeps
+             
 
 RUN mkdir /data && chown redis:redis /data
 VOLUME /data
 WORKDIR /data
-
+RUN   apt-get -y install ruby-full  && apt-get -y install rubygems && gem install redis
 COPY redis.conf /usr/local/etc/redis/redis.conf
 COPY redis-trib.rb  /usr/local/etc/redis/redis-trib.rb
 RUN chmod 777  /usr/local/etc/redis/redis-trib.rb
